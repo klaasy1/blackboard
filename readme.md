@@ -1,7 +1,7 @@
-## installation using git
+## Installation using git
 
-git clone https://github.com/klaasy1/KlaasMasana.git
+git clone https://github.com/klaasy1/blackboard.git
 
-## installation dependencies with composer
+After git clone completes cloning the project to your php server run the following command to install dependencies with composer
 
-In your project root Run: composer update
+composer update
