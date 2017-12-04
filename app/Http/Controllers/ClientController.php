@@ -10,6 +10,10 @@ use Session;
 class ClientController extends Controller
 {
 
+    /**
+     * Where the index page for clients.
+     *
+     */
     public function show()
     {
     
@@ -24,6 +28,11 @@ class ClientController extends Controller
        
     }
     
+    /**
+     * View client details.
+     *
+     * @var id
+     */
     public function view($id){
         
         $client = DB::table('clients')
@@ -35,6 +44,11 @@ class ClientController extends Controller
         
     }
     
+    /**
+     * Creates a client
+     *
+     * @var request
+     */
     public function store(Request $request){
       
       $this->validate($request, [
@@ -56,6 +70,12 @@ class ClientController extends Controller
     
     }
     
+    /**
+     * Where to redirect users after login.
+     *
+     * @var request
+     * @var id
+     */
     public function update(Request $request, $id){
     
         $this->validate($request, [
@@ -77,10 +97,11 @@ class ClientController extends Controller
       
     }
     
-    /*
+    /**
      * There are two ways to delete, you could delete the record
      * or set deteled_at field to a current date, if deleted_at is not null, then 
      * the record is deleted
+     * @var id
      * */
     public function delete($id){
         
@@ -98,6 +119,10 @@ class ClientController extends Controller
     
     }
     
+     /**
+     * Shows client create form
+     *
+     */
     public function createClientForm(){
     
       $userid = \Auth::user()->id;
@@ -106,6 +131,10 @@ class ClientController extends Controller
       
     }
     
+     /**
+     * Shows client edit form
+     *
+     */
     public function editClientForm($id){
         
         $client = DB::table('clients')
